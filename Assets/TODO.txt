@@ -1,0 +1,6 @@
+TODO (AWAKENING):
+
+* Pathfinding
+* Enemy AI / actions
+* Weapons and abilities
+* Story and levels
