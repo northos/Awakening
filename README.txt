@@ -1,0 +1,12 @@
+AWAKENING
+(by Doug Norton)
+
+A work-in-progress top-down action game with a highly customizable class system.
+Still in its early stages, though much of the framework is in place, including implementation of player abilities.
+
+things TODO:
+
+* Pathfinding
+* Enemy AI / actions
+* Further weapons and abilities
+* Story and levels

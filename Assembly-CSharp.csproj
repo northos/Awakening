@@ -57,8 +57,8 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\GlowFlicker.cs" />
+     <Compile Include="Assets\Scripts\HealthText.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <None Include="Assets\TODO.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
