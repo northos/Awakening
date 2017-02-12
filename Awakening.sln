@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{3703079C-427C-651A-B8B6-B591B6238D6A}") = "Awakening", "Assembly-CSharp.csproj", "{27DC62DF-A7AC-6527-1042-0E92E610F0A3}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awakening", "Assembly-CSharp.csproj", "{27DC62DF-A7AC-6527-1042-0E92E610F0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
