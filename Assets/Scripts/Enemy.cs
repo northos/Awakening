@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof (SpriteRenderer))]
+[RequireComponent (typeof (Animator))]
+
+// this serves as a base class for all enemy behavior scripts in the game
+// more specific enemies will need to have their own scripts which inherit from this and define specific behavior
 public class Enemy : MonoBehaviour {
 	public float health;
 	public float maxHealth;
 	public GameObject damageText;
+	protected GameObject player;
+	protected Animator animator;
 
 	// apply a given amount of damage to this enemy
 	// returns whether or not this kills the enemy
@@ -23,14 +30,15 @@ public class Enemy : MonoBehaviour {
 	}
 
 	// set enemy's starting stats
-	void Start () {
+	// capture some objects in variables for future use
+	protected void Start () {
 		health = maxHealth;
+		player = GameObject.FindGameObjectWithTag ("Player");
+		animator = GetComponent<Animator> ();
 	}
 	
-	// 
-	void Update () {
-	
-	}
+	// there is no basic update funcionality to be defined, so all of it will have to come from child classes
+	protected virtual void Update () {}
 
 	// dim sprite slightly when the player mouses over
 	public void OnMouseEnter () {
