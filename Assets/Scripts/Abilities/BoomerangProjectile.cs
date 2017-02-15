@@ -14,11 +14,10 @@ public class BoomerangProjectile : MonoBehaviour {
 
 	// on colliding with an object, damage it
 	// enemies can be hit multiple times this way, but only if the projectile exits and re-enters
-	// TODO: fix
-	void OnCollisionEnter (Collision c) {
-		print ("hit");
+	void OnTriggerEnter2D (Collider2D c) {
 		if (c.gameObject.tag == "Enemy") {
 			if (c.gameObject.GetComponent<Enemy> ().TakeDamage (damage))
+				// remove any targets which are killed from the list of targets
 				targets.Remove (c.gameObject);
 		}
 	}
@@ -30,27 +29,13 @@ public class BoomerangProjectile : MonoBehaviour {
 		// first, go in the target direction until chosen range is reached
 		if (distanceTraveled < range) {
 			Vector3 movement = direction * flySpeed * Time.deltaTime;
-			transform.Translate (movement);
+			transform.position += movement;
 			distanceTraveled += movement.magnitude;
 		} else {
 			// move straight back towards the player
 			Vector3 targetVector = (player.transform.position - transform.position).normalized;
-			transform.Translate (targetVector * flySpeed * Time.deltaTime);
+			transform.position += targetVector * flySpeed * Time.deltaTime;
 		}
-		// damage enemies passed along the way
-		/*List<GameObject> killed = new List<GameObject>();
-		foreach (GameObject target in targets) {
-			if (Vector3.Distance (transform.position, target.transform.position) <= hitRadius) {
-				// do damage to those close enough; if this kills them, add to a list of kills
-				if (((Enemy)target.GetComponent (typeof(Enemy))).TakeDamage (damage * Time.deltaTime)) {
-					killed.Add (target);
-				}
-			}
-		}
-		// remove killed enemies from targets
-		foreach (GameObject kill in killed) {
-			targets.Remove (kill);
-		}*/
 		// if within hit range of player, stop and destroy self
 		// wait until range has been reached, so it doesn't die immediately
 		if (Vector3.Distance (player.transform.position, transform.position) <= hitRadius && distanceTraveled >= range) {

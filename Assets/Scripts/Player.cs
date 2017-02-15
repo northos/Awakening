@@ -32,12 +32,16 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	// Set player's starting stats
+	// set player's starting stats, initialize references, set ability cooldowns to 0
 	void Start () {
 		health = maxHealth;
 		enemies = new List<GameObject> ();
 		enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 		animator = GetComponent<Animator> ();
+		ability1.cooldownTimer = 0f;
+		ability2.cooldownTimer = 0f;
+		ability3.cooldownTimer = 0f;
+		ability4.cooldownTimer = 0f;
 	}
 
 	// Move the player based on keyboard input
