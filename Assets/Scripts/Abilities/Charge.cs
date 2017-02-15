@@ -16,7 +16,7 @@ public class Charge : Ability {
 	override public void Execute(Player player, Vector3 direction, List<GameObject> targets){
 		if (cooldownTimer != 0f)
 			return;
-		player.moveMode = false;
+		player.animator.SetBool ("Immobilized", true);
 		active = true;
 		targetVector = direction;
 		distanceTraveled = 0f;
@@ -59,7 +59,7 @@ public class Charge : Ability {
 		// if the player has reached max distance, stop and do splash damage
 		if (distanceTraveled >= distance) {
 			active = false;
-			player.moveMode = true;
+			player.animator.SetBool ("Immobilized", false);
 			cooldownTimer = cooldown;
 			//TODO
 		}
@@ -70,7 +70,7 @@ public class Charge : Ability {
 				if (Vector3.Distance (player.transform.position, enemy.transform.position) <= impactRange) {
 					// when one is found, stop the charge
 					active = false;
-					player.moveMode = true;
+					player.animator.SetBool ("Immobilized", false);
 					cooldownTimer = cooldown;
 					// go through all again and damage those in splash range (handled by helper)
 					doSplashDamage (player, targets);

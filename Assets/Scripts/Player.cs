@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	public Ability ability3;
 	public Ability ability4;
 	List<GameObject> enemies;
-	public bool moveMode = true;
+	public Animator animator;
 	public GameObject damageText;
 
 	// Apply a given amount of damage to the player
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour {
 		health = maxHealth;
 		enemies = new List<GameObject> ();
 		enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+		animator = GetComponent<Animator> ();
 	}
 
 	// Move the player based on keyboard input
@@ -44,10 +45,11 @@ public class Player : MonoBehaviour {
 		Vector2 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 		// check that the player is in movement mode (not immobilized or using a movement skill)
-		if (moveMode) {
+		if (!(animator.GetBool ("Immobilized"))) {
 			// Check for mouse click, and give the player a target to move to at the mouse's position
 			if (Input.GetMouseButton (0) || Input.GetMouseButton (1)) {
 				target = (Vector3)mousePosition;
+				animator.SetBool ("Walking", true);
 			}
 			// If there is a target, move towards it
 			if (target != Vector3.zero) {
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour {
 				transform.position += (Vector3)(moveVector.normalized * walkSpeed * Time.deltaTime);
 				if (Vector2.Distance (target, transform.position) < walkSpeed * Time.deltaTime) {
 					target = Vector3.zero;
+					animator.SetBool ("Walking", false);
 				}
 			}
 
