@@ -1,14 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Flamehead.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SkillSelectButton.cs">
     <Files>
       <File FileName="README.txt" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player.cs" Line="44" Column="11" />
       <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Flamehead.cs" Line="23" Column="39" />
-      <File FileName="Assets\Scripts\Abilities\BoomerangProjectile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Abilities\Boomerang.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ability.cs" Line="10" Column="28" />
+      <File FileName="Assets\Scripts\Flamehead.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SkillSelectButton.cs" Line="13" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

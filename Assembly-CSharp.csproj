@@ -50,7 +50,20 @@
      <Compile Include="Assets\Scripts\Abilities\Boomerang.cs" />
      <Compile Include="Assets\Scripts\Abilities\BoomerangProjectile.cs" />
      <Compile Include="Assets\Scripts\Abilities\Charge.cs" />
+     <Compile Include="Assets\Scripts\Abilities\CrossCut.cs" />
+     <Compile Include="Assets\Scripts\Abilities\DeathSpiral.cs" />
+     <Compile Include="Assets\Scripts\Abilities\DeathSpiralProjectile.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Disarm.cs" />
+     <Compile Include="Assets\Scripts\Abilities\GroundSlam.cs" />
+     <Compile Include="Assets\Scripts\Abilities\RingOfBlades.cs" />
+     <Compile Include="Assets\Scripts\Abilities\RingOfBladesProjectile.cs" />
+     <Compile Include="Assets\Scripts\Abilities\ShieldSwipe.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Shockwave.cs" />
      <Compile Include="Assets\Scripts\Abilities\Slash.cs" />
+     <Compile Include="Assets\Scripts\Abilities\SliceNDice.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Thrust.cs" />
+     <Compile Include="Assets\Scripts\Abilities\WallOfBlades.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Whirlwind.cs" />
      <Compile Include="Assets\Scripts\Ability.cs" />
      <Compile Include="Assets\Scripts\AbilityIcon.cs" />
      <Compile Include="Assets\Scripts\DamageText.cs" />
@@ -61,6 +74,7 @@
      <Compile Include="Assets\Scripts\HealthText.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SceneTransition.cs" />
+     <Compile Include="Assets\Scripts\SkillSelectButton.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

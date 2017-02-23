@@ -21,9 +21,6 @@ public class Charge : Ability {
 		targetVector = direction;
 		distanceTraveled = 0f;
 	}
-	
-	// this ability has no on-hit portion (player takes normal damage)
-	override public float OnHit(Player player, GameObject attacker, float hitDamage){return hitDamage;}
 
 	// helper function to carry out splash damage when charge ends
 	// finds all enemies within splash radius and does the ability's damage to them

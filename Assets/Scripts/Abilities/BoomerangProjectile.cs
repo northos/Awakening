@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class BoomerangProjectile : MonoBehaviour {
 	public float range;
 	public float flySpeed;
-	public float hitRadius;
 	public float damage;
+	public float hitRadius;
 	public Vector3 direction;
 	public Player player;
 	public List<GameObject> targets;

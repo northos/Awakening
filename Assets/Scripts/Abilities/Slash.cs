@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class Slash : Ability {
 	public float range;
-	public float angle;
+	public float arc;
 
-	// Slash all enemies within the given range and angle from the mouse cursor
+	// slash all enemies within the given range and angle from the mouse cursor
 	override public void Execute(Player player, Vector3 direction, List<GameObject> targets){
 		direction.Normalize ();
 		// Loop through possible targets
@@ -18,7 +18,7 @@ public class Slash : Ability {
 			}
 			Vector3 targetDirection = (target.transform.position - player.transform.position).normalized;
 			// Check if angle to target is within cone of attack
-			if (Mathf.Abs (Mathf.Acos (Vector3.Dot(direction, targetDirection))) <= angle){
+			if (Mathf.Abs (Mathf.Acos (Vector3.Dot(direction, targetDirection))) <= arc){
 				if (((Enemy)target.GetComponent (typeof(Enemy))).TakeDamage (damage)) {
 					killed.Add (target);
 				} 
@@ -28,10 +28,4 @@ public class Slash : Ability {
 			targets.Remove (enemy);
 		}
 	}
-
-	// this ability has no on-hit portion (player takes normal damage)
-	override public float OnHit(Player player, GameObject attacker, float hitDamage){return hitDamage;}
-
-	// this ability has no passive portion
-	override public void Passive(Player player, List<GameObject> targets){}
 }
