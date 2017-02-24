@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent (typeof (Button))]
+
 public class SkillSelectButton : MonoBehaviour {
 	public SkillSelectButton child1 = null;
 	public SkillSelectButton child2 = null;
