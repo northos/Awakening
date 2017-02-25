@@ -20,6 +20,17 @@ public class BoomerangProjectile : MonoBehaviour {
 				// remove any targets which are killed from the list of targets
 				targets.Remove (c.gameObject);
 		}
+		// since this object will only have a Trigger collider, it will not interact with walls
+		// this section causes it to reverse upon striking a wall, as one might expect (rather than pass through it)
+		// if the object is already returning upon hitting the wall, it will destroy itself
+		else if (c.gameObject.tag == "Wall") {
+			if (distanceTraveled < range) {
+				distanceTraveled = range;
+			} else {
+				// destroy self if returning as it doesn't make sense to do much else
+				Destroy (gameObject);
+			}
+		}
 	}
 
 	// move projectile as follows:
