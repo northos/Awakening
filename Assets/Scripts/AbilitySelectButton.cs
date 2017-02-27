@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 [RequireComponent (typeof (Button))]
 
-public class SkillSelectButton : MonoBehaviour {
-	public SkillSelectButton child1 = null;
-	public SkillSelectButton child2 = null;
+public class AbilitySelectButton : MonoBehaviour {
+	public AbilitySelectButton child1 = null;
+	public AbilitySelectButton child2 = null;
+	public GameObject ability;
 
-	// toggle this skill button's state to be active or inactive
+	// toggle this ability button's state to be active or inactive
 	// this will affect the button's image color, and potentially activate or deactivate buttons below it on the tree
 	public void setActive (bool active) {
 		// set this buttons interactability based on the arg
