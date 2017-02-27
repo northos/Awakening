@@ -9,6 +9,7 @@ public class AbilitySelectButton : MonoBehaviour {
 	public AbilitySelectButton child1 = null;
 	public AbilitySelectButton child2 = null;
 	public GameObject ability;
+	public Text descriptionText;
 
 	// toggle this ability button's state to be active or inactive
 	// this will affect the button's image color, and potentially activate or deactivate buttons below it on the tree
@@ -22,5 +23,17 @@ public class AbilitySelectButton : MonoBehaviour {
 		if (child2 != null) {
 			child2.setActive (active);
 		}
+	}
+
+	// display text with the ability's description while the button is moused over
+	// methods are public to word with Event Triggers
+	public void showDescription () {
+		descriptionText.text = ability.GetComponent<Ability> ().description;
+		descriptionText.enabled = true;
+	}
+
+	// hide said description text when not moused over
+	public void hideDescription () {
+		descriptionText.enabled = false;
 	}
 }

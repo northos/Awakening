@@ -7,6 +7,6 @@ Still in its early stages, though much of the framework is in place, including i
 things TODO:
 
 * Pathfinding
-* Enemy AI / actions
+* More enemy types
 * Further weapons and abilities
 * Story and levels
