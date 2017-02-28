@@ -8,8 +8,13 @@ using UnityEngine.UI;
 public class AbilitySelectButton : MonoBehaviour {
 	public AbilitySelectButton child1 = null;
 	public AbilitySelectButton child2 = null;
-	public GameObject ability;
+	public Ability ability;
 	public Text descriptionText;
+
+	// on start, set the button's image to the attached ability's icon
+	void Start () {
+		GetComponent<Image> ().sprite = ability.icon;
+	}
 
 	// toggle this ability button's state to be active or inactive
 	// this will affect the button's image color, and potentially activate or deactivate buttons below it on the tree
@@ -28,7 +33,7 @@ public class AbilitySelectButton : MonoBehaviour {
 	// display text with the ability's description while the button is moused over
 	// methods are public to word with Event Triggers
 	public void showDescription () {
-		descriptionText.text = ability.GetComponent<Ability> ().description;
+		descriptionText.text = ability.description;
 		descriptionText.enabled = true;
 	}
 
