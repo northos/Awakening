@@ -61,7 +61,7 @@ public class Flamehead : Enemy {
 		animator.SetBool ("Charging", false);
 		animator.SetBool ("Attacking", true);
 		if (Vector3.Distance (transform.position, player.transform.position) <= hitRange) {
-			player.GetComponent<Player> ().TakeDamage (hitDamage, gameObject);
+			player.GetComponent<Player> ().TakeDamage (hitDamage * (1 - damageReduction), gameObject);
 		}
 	}
 

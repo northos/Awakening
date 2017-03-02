@@ -9,6 +9,7 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 	public float health;
 	public float maxHealth;
+	protected float damageReduction;
 	public GameObject damageText;
 	protected GameObject player;
 	protected Animator animator;
@@ -28,6 +29,15 @@ public abstract class Enemy : MonoBehaviour {
 		}
 		// if survived
 		return false;
+	}
+
+	// creates a numerical modifier for the enemy's damage
+	// the float given is the REDUCTION, not a percentage scale. so if a value of 10 is given, the enemy will do 90% damage
+	// only the highest reduction can apply at once; if a lower reduction is applied, it does nothing
+	public void reduceDamage (float reduction) {
+		if (reduction > damageReduction) {
+			damageReduction = reduction;
+		}
 	}
 
 	// set enemy's starting stats
