@@ -10,8 +10,10 @@ public class RingOfBlades : Ability {
 	public GameObject bladePrefab;
 	public float radius;
 
-
+	// ability execution spawns a number of blades in a circle around the character
+	// each blade object will handle its own rotation and damaging behavior
 	override public void Execute(Player player, Vector3 direction, List<GameObject> targets) {
+		// only activate when cooldown is completed
 		if (cooldownTimer != 0f)
 			return;
 
@@ -21,12 +23,12 @@ public class RingOfBlades : Ability {
 			Quaternion offsetRotation = Quaternion.AngleAxis (360f * i / numBlades, Vector3.forward);
 			Vector3 offsetVector = offsetRotation * Vector3.up;
 			blade.transform.position = player.transform.position + offsetVector;
-			print (360f * i / numBlades);
 			blade.transform.Rotate (0, 0, 360f * i / numBlades);
 			blade.GetComponent<RingOfBladesProjectile> ().player = player;
 			blade.GetComponent<RingOfBladesProjectile> ().orbitDistance = radius;
 		}
-			
+
+		// 
 		cooldownTimer = cooldown;
 		durationCounter = 0;
 	}

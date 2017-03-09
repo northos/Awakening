@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class RingOfBladesProjectile : MonoBehaviour {
 	public float flySpeed;
+	public float rotateSpeed;
 	public float damage;
 	public float orbitDistance;
 	public Player player;
@@ -28,7 +29,7 @@ public class RingOfBladesProjectile : MonoBehaviour {
 	//  * find the vector 90 degrees clockwise from that
 	//  * move the projectile along the second vector according to its speed; this will make it move in a circle around the player
 	//  * move the projectile back to the proper distance from the player, ensuring it stays in a consistent circular path
-	//  * no need to rotate the projectile; it has an animation to handle that
+	//  * rotate the projectile according to its rotation speed
 	void Update () {
 		// get a vector towards the player
 		Vector3 playerVector = player.transform.position - transform.position;
@@ -41,5 +42,7 @@ public class RingOfBladesProjectile : MonoBehaviour {
 		// (then scale it to the proper distance and set the position to be the player's position plus that vector)
 		playerVector = (transform.position - player.transform.position).normalized * orbitDistance;
 		transform.position = player.transform.position + playerVector;
+		// rotate the projectile according to its rotation speed
+		transform.Rotate (0f, 0f, -rotateSpeed * Time.deltaTime);
 	}
 }
