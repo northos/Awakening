@@ -19,7 +19,7 @@ public class Slash : Ability {
 			Vector3 targetDirection = (target.transform.position - player.transform.position).normalized;
 			// Check if angle to target is within cone of attack
 			if (Mathf.Abs (Mathf.Acos (Vector3.Dot(direction, targetDirection))) <= arc){
-				if (((Enemy)target.GetComponent (typeof(Enemy))).TakeDamage (damage)) {
+				if ((target.GetComponent<Enemy> ().TakeDamage (damage))) {
 					killed.Add (target);
 				} 
 			}

@@ -28,7 +28,7 @@ public class RingOfBlades : Ability {
 			blade.GetComponent<RingOfBladesProjectile> ().orbitDistance = radius;
 		}
 
-		// 
+		// begin cooldown and duration timers
 		cooldownTimer = cooldown;
 		durationCounter = 0;
 	}

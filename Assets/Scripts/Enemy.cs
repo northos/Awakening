@@ -14,6 +14,11 @@ public abstract class Enemy : MonoBehaviour {
 	protected GameObject player;
 	protected Animator animator;
 	protected LayerMask enemyMask;
+	protected bool disabled = false;
+	protected float disableDuration;
+	protected float DOTDuration;
+	protected float DOTDamage;
+	protected float timeSinceTick;
 
 	// apply a given amount of damage to this enemy
 	// returns whether or not this kills the enemy
@@ -37,6 +42,36 @@ public abstract class Enemy : MonoBehaviour {
 	public void reduceDamage (float reduction) {
 		if (reduction > damageReduction) {
 			damageReduction = reduction;
+		}
+	}
+
+	// public method to be called by player abilities
+	// disables the enemy for the given duration, preventing it from moving or attacking
+	// interrupts present actions by enemy (walking somewhere, performing an attack)
+	public void stun (float duration) {
+		// apply disable effect
+		disabled = true;
+		// begin countdown with supplied duration
+		disableDuration = duration;
+		Animator animator = GetComponent<Animator> ();
+		AnimatorControllerParameter[] parameters = animator.parameters;
+		// for each animation state parameter, set it to false (enemy will no longer be walking, attacking, etc)
+		foreach (AnimatorControllerParameter param in parameters) {
+			animator.SetBool (param.name, false);
+		}
+	}
+
+	// public method to be called by player abilities
+	// applies damage over time to the enemy
+	// damage given is the amount taken each second
+	// only the highest damage (fastest) DOT will apply at any one time
+	public void takeDamageOverTime (float duration, float damage) {
+		// if new damage is higher than existing DOT damage, apply the new DOT
+		// if new damage is equal, refresh the duration to the new duration
+		if (damage >= DOTDamage) {
+			DOTDamage = damage;
+			DOTDuration = Mathf.Max(duration, DOTDuration);
+			timeSinceTick = 0f;
 		}
 	}
 

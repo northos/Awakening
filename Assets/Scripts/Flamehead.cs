@@ -18,6 +18,27 @@ public class Flamehead : Enemy {
 	//    * remain in attack stance until animation finishes
 	//  * otherwise, wander slowly while player is too far away
 	protected override void Update () {
+		// if flamehead has an active DOT, manage its timer and damage
+		if (DOTDuration > 0F) {
+			DOTDuration = Mathf.Max (DOTDuration - Time.deltaTime, 0);
+			timeSinceTick += Time.deltaTime;
+			if (timeSinceTick >= 1f) {
+				timeSinceTick -= 1f;
+				TakeDamage (DOTDamage);
+			}
+		}
+
+		// if flamehead is disabled, do nothing (but update the timer)
+		if (disabled) {
+			disableDuration = Mathf.Max (0, disableDuration - Time.deltaTime);
+			// once timer reached 0, remove disable effect
+			if (disableDuration == 0) {
+				disabled = false;
+			}
+			// do nothing else, because enemy is disabled
+			return;
+		}
+
 		// set targetLocation back to zero once within hitRange of the target
 		// this prevents further pathing until the player is detected again
 		if (Vector3.Distance (targetLocation, transform.position) <= hitRange) {
