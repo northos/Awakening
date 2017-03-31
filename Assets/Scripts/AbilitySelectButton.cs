@@ -33,7 +33,10 @@ public class AbilitySelectButton : MonoBehaviour {
 	// display text with the ability's description while the button is moused over
 	// methods are public to word with Event Triggers
 	public void showDescription () {
-		descriptionText.text = ability.description;
+		descriptionText.text = ability.name + ":\n";
+		if (ability.treeType != "none")
+			descriptionText.text += ability.treeType + " ability\n";
+		descriptionText.text += ability.description;
 		descriptionText.enabled = true;
 	}
 

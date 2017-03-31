@@ -26,6 +26,7 @@ public class RingOfBlades : Ability {
 			blade.transform.Rotate (0, 0, 360f * i / numBlades);
 			blade.GetComponent<RingOfBladesProjectile> ().player = player;
 			blade.GetComponent<RingOfBladesProjectile> ().orbitDistance = radius;
+			blade.GetComponent<RingOfBladesProjectile> ().targets = targets;
 		}
 
 		// begin cooldown and duration timers

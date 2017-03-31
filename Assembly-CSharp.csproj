@@ -46,24 +46,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Abilities\Block.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Boomerang.cs" />
-     <Compile Include="Assets\Scripts\Abilities\BoomerangProjectile.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Charge.cs" />
-     <Compile Include="Assets\Scripts\Abilities\CrossCut.cs" />
-     <Compile Include="Assets\Scripts\Abilities\DeathSpiral.cs" />
-     <Compile Include="Assets\Scripts\Abilities\DeathSpiralProjectile.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Disarm.cs" />
-     <Compile Include="Assets\Scripts\Abilities\GroundSlam.cs" />
-     <Compile Include="Assets\Scripts\Abilities\RingOfBlades.cs" />
-     <Compile Include="Assets\Scripts\Abilities\RingOfBladesProjectile.cs" />
-     <Compile Include="Assets\Scripts\Abilities\ShieldSwipe.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Shockwave.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Slash.cs" />
-     <Compile Include="Assets\Scripts\Abilities\SliceNDice.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Thrust.cs" />
-     <Compile Include="Assets\Scripts\Abilities\WallOfBlades.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Whirlwind.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Block.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Boomerang.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\BoomerangProjectile.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Charge.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\CrossCut.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\DeathSpiral.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\DeathSpiralProjectile.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Disarm.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\GroundSlam.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\RingOfBlades.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\RingOfBladesProjectile.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\ShieldSwipe.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Shockwave.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Slash.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\SliceNDice.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Thrust.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\WallOfBlades.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Whirlwind.cs" />
      <Compile Include="Assets\Scripts\Ability.cs" />
      <Compile Include="Assets\Scripts\AbilityIcon.cs" />
      <Compile Include="Assets\Scripts\AbilitySelectButton.cs" />

@@ -13,6 +13,7 @@ public abstract class Ability : MonoBehaviour {
 	public int cooldown;
 	public float damage;
 	public string description;
+	public string treeType;
 	public float cooldownTimer;
 
 	// all Abilities can override these three methods to define their functionality (some will implement one or more to do nothing)
@@ -28,5 +29,10 @@ public abstract class Ability : MonoBehaviour {
 	virtual public void Passive(Player player, List<GameObject> targets){
 		// count down cooldown timer
 		cooldownTimer = Mathf.Max (0f, cooldownTimer - Time.deltaTime);
+	}
+
+	// matching function for removing null entries from a list
+	protected bool isNull (GameObject g) {
+		return g == null;
 	}
 }

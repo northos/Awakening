@@ -6,6 +6,12 @@ public class WallOfBlades : Ability {
 	public float duration;
 	float durationTimer;
 	bool active = false;
+	List <GameObject> killed;
+
+	// on start, initialize list of killed enemies
+	void Start() {
+		killed = new List <GameObject> ();
+	}
 
 	// when executed, activate shield which immobilizes the player but reflects all incoming damage
 	// lasts for the assigned duration
@@ -15,8 +21,10 @@ public class WallOfBlades : Ability {
 			return;
 		}
 
+		// activate shield, immobilize player, and start the duration timer
 		active = true;
 		player.GetComponent <Animator> ().SetBool ("Immobilized", true);
+		durationTimer = duration;
 
 		// begin cooldown timer
 		cooldownTimer = cooldown;
@@ -25,7 +33,10 @@ public class WallOfBlades : Ability {
 	// while shield is active, player takes no damage and all damage is reflected to attacker
 	override public float OnHit(Player player, GameObject attacker, float hitDamage) {
 		if (active) {
-			attacker.GetComponent <Enemy> ().TakeDamage (hitDamage);
+			// reflect damage back at attacker; if it dies, store it to be removed from targets
+			if (attacker.GetComponent <Enemy> (). TakeDamage (hitDamage)) {
+				killed.Add (attacker);
+			}
 			return 0f;
 		}
 		// if inactive, simply take normal damage
@@ -42,6 +53,16 @@ public class WallOfBlades : Ability {
 		if (durationTimer == 0f) {
 			active = false;
 			player.GetComponent <Animator> ().SetBool ("Immobilized", false);
+		}
+
+		// if any enemies were killed since the last update, remove them from the targets list
+		if (killed.Count > 0) {
+			foreach (GameObject enemy in killed) {
+				targets.Remove (enemy);
+				killed.Remove (enemy);
+			}
+			// then clear the list
+			killed.Clear ();
 		}
 	}
 }
