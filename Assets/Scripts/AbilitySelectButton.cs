@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent (typeof (Button))]
+[RequireComponent (typeof (Image))]
 
 public class AbilitySelectButton : MonoBehaviour {
 	public AbilitySelectButton child1 = null;
