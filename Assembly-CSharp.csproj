@@ -46,6 +46,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Bifurcate.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Chop.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Cleave.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\EarthToEarth.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Earthquake.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Enrage.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Hew.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Hook.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\LeapSlam.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\TacticalAdvantage.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\TipTheScales.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Twister.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\UnleashTheBeast.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Vault.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Greataxe\Warcry.cs" />
      <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Block.cs" />
      <Compile Include="Assets\Scripts\Abilities\Sword + Shield\Boomerang.cs" />
      <Compile Include="Assets\Scripts\Abilities\Sword + Shield\BoomerangProjectile.cs" />
