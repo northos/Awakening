@@ -61,7 +61,7 @@ public class Flamehead : Enemy {
 			transform.Translate (moveVector * Time.deltaTime);
 		}
 
-		// when player is within attack range, begin chargingi an attack
+		// when player is within attack range, begin charging an attack
 		if (Vector3.Distance (transform.position, player.transform.position) <= attackRange && !animator.GetBool ("Charging") && !animator.GetBool ("Attacking")) {
 			animator.SetBool ("Walking", false);
 			animator.SetBool ("Charging", true);
